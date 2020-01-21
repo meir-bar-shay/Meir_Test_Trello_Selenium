@@ -12,16 +12,16 @@ public class BoardDeletionTest extends TestBase {
     }
     @Test
     public void deleteSingleBoardTest() throws InterruptedException {
-        if(app.boardIsSuccessfullyClicked())
-            app.boardDeletionProcess();
+        if(app.getBoardHelper().boardIsSuccessfullyClicked())
+            app.getBoardHelper().boardDeletionProcess();
 
     }
     @Test
     public void deleteAllBoardsTest() throws InterruptedException {
 
-        while(app.boardIsSuccessfullyClicked())
+        while(app.getBoardHelper().boardIsSuccessfullyClicked())
         {
-            app.boardDeletionProcess();
+            app.getBoardHelper().boardDeletionProcess();
         }
     }
 

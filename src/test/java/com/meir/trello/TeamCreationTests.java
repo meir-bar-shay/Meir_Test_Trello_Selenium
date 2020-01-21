@@ -15,7 +15,7 @@ public class TeamCreationTests extends TestBase{
     public void teamCreationTestFromHeader() throws InterruptedException {
 
 //        int countCountBefore = getTeamsCount();
-        app.clickOnPlusButton();
+        app.getBoardHelper().clickOnPlusButton();
         app.selectCreateTeamFromDropDown();
         app.fillTeamCreationForm("Meir1", "Ok!!!");
         app.submitTeamCreation();

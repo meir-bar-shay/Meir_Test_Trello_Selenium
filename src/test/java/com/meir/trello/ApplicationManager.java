@@ -11,6 +11,8 @@ import org.openqa.selenium.remote.BrowserType;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
+    BoardHelper boardHelper;
+
      WebDriver wd;
 
     public void init() {
@@ -27,19 +29,34 @@ public class ApplicationManager {
 
         wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         wd.get("https://trello.com/");
+
+        boardHelper = new BoardHelper(wd);
     }
 
     public  boolean isElementPresent(By locator){
         return wd.findElements(locator).size()>0;
     }
 
-    public void stop() {
-        wd.quit();
+    public void type(By locator, String text) throws InterruptedException {
+        click(locator);
+        wd.findElement(locator).clear();
+        wd.findElement(locator).sendKeys(text);
     }
 
     public void pause(int millis) throws InterruptedException {
         Thread.sleep(millis);
     }
+
+    public void click(By locator) throws InterruptedException {
+        wd.findElement(locator).click();
+        pause(2000);
+    }
+
+    public void stop() {
+        wd.quit();
+    }
+
+
 
     public void fillLoginFormAtlassianAcc(String user, String pwd) throws InterruptedException {
         type(By.id("user"), user);
@@ -55,21 +72,14 @@ public class ApplicationManager {
         click(By.id("login"));
     }
 
-    public void click(By locator) throws InterruptedException {
-        wd.findElement(locator).click();
-        pause(2000);
-    }
+
 
     public void fillLoginFormOldAcc(String userName, String password) throws InterruptedException {
         type(By.id("user"), userName);
         type(By.id("password"), password);
     }
 
-    public void type(By locator, String text) throws InterruptedException {
-        click(locator);
-        wd.findElement(locator).clear();
-        wd.findElement(locator).sendKeys(text);
-    }
+
 
     public void clickLoginLink() throws InterruptedException {
         click(By.cssSelector("[href='/login']"));
@@ -121,42 +131,6 @@ public class ApplicationManager {
         click(By.name("house"));
     }
 
-    public void confirmBoardCreation() throws InterruptedException {
-        click(By.cssSelector("[data-test-id='create-board-submit-button']"));
-    }
-
-    public void fillBoardForm(String boardName) throws InterruptedException {
-        type(By.cssSelector("[data-test-id='create-board-title-input']"),boardName);
-    }
-
-    public void selectCreateBoardFromDropDown() throws InterruptedException {
-        click(By.cssSelector("[data-test-id='header-create-board-button']"));
-    }
-
-    public void clickOnPlusButton() throws InterruptedException {
-        click(By.cssSelector("[data-test-id='header-create-menu-button']"));
-    }
-
-    public  int getBoardsCount() {
-        return wd.findElements(By.xpath("//*[@class='boards-page-board-section-list']/../../..//li")).size()-1;
-    }
-
-    public void permanentlyDeleteBoard() throws InterruptedException {
-        click(By.cssSelector("[class='js-confirm full negate']"));
-    }
-
-    public void permanentlyBoard() throws InterruptedException {
-        click(By.cssSelector("[class='quiet js-delete']"));
-    }
-
-    public void clickButtonCloseBoard() throws InterruptedException {
-        click(By.cssSelector("[class='js-confirm full negate']"));
-    }
-
-    public void selectCloseBoardButton() throws InterruptedException {
-        click(By.cssSelector("[class='board-menu-navigation-item-link js-close-board']"));
-    }
-
     public void selectCreateTeamFromDropDown() throws InterruptedException {
         click(By.cssSelector("[data-test-id='header-create-team-button']"));
     }
@@ -198,22 +172,6 @@ public class ApplicationManager {
         click(By.cssSelector("[value='Delete Forever']"));
     }
 
-    public void openMoreBoard() throws InterruptedException {
-        click(By.cssSelector("[class='board-menu-navigation-item-link js-open-more']"));
-    }
-
-    public boolean boardIsSuccessfullyClicked()
-    {
-        try
-        {
-            click(By.xpath("//*[@class='boards-page-board-section-list']//li[1 != last()]"));
-            return true;
-        }catch(Exception exception)
-        {
-            return false;
-        }
-    }
-
     public void changeTeamName() throws InterruptedException {
         click(By.cssSelector("[name='displayName']"));
         wd.findElement(By.cssSelector("[name='displayName']")).clear();
@@ -226,13 +184,7 @@ public class ApplicationManager {
         click(By.cssSelector(".js-edit-profile"));
     }
 
-    public void boardDeletionProcess() throws InterruptedException {
-        openMoreBoard();
-        selectCloseBoardButton();
-        clickButtonCloseBoard();
-        permanentlyBoard();
-        permanentlyDeleteBoard();
-        returnToHomePage();
-        pause(5000);
+    public BoardHelper getBoardHelper() {
+        return boardHelper;
     }
 }
