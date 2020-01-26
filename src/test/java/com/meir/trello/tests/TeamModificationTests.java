@@ -1,4 +1,4 @@
-package com.meir.trello;
+package com.meir.trello.tests;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -6,18 +6,18 @@ import org.testng.annotations.Test;
 public class TeamModificationTests extends TestBase {
     @BeforeMethod
     public void preconditions() throws InterruptedException {
-        if (!app.isAvatarPresentOnHeader()) {
-            app.logoutAtlassianAss();
+        if (!app.getSession().isAvatarPresentOnHeader()) {
+            app.getSession().logoutAtlassianAss();
         }
     }
 
     @Test
     public void modificationTeamName() throws InterruptedException {
-        app.clickOnTheTeam();
-        app.clickOnTeamSettings();
-        app.clickOnEditTeamProfileButton();
-        app.changeTeamName();
-        app.returnToHomePage();
+        app.getTeam().clickOnTheTeam();
+        app.getTeam().clickOnTeamSettings();
+        app.getTeam().clickOnEditTeamProfileButton();
+        app.getTeam().changeTeamName();
+        app.getBoard().returnToHomePage();
 //        clickOnTheTeam();
 //        clickOnTeamSettings();
 //        String name = getText(By.cssSelector(".u-inline"));

@@ -1,5 +1,6 @@
-package com.meir.trello;
+package com.meir.trello.manager;
 
+import com.meir.trello.model.BoardData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -12,8 +13,8 @@ public class BoardHelper extends HelperBase{
         click(By.cssSelector("[data-test-id='create-board-submit-button']"));
     }
 
-    public void fillBoardForm(String boardName) throws InterruptedException {
-        type(By.cssSelector("[data-test-id='create-board-title-input']"),boardName);
+    public void fillBoardForm(BoardData boardData) throws InterruptedException {
+        type(By.cssSelector("[data-test-id='create-board-title-input']"), boardData.getBoardName());
     }
 
     public void selectCreateBoardFromDropDown() throws InterruptedException {
@@ -69,4 +70,7 @@ public class BoardHelper extends HelperBase{
         returnToHomePage();
         pause(5000);
     }
+
+
 }
+

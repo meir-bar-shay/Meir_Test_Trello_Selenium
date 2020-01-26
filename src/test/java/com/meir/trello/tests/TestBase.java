@@ -1,5 +1,6 @@
-package com.meir.trello;
+package com.meir.trello.tests;
 
+import com.meir.trello.manager.ApplicationManager;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 

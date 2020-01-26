@@ -3,9 +3,9 @@
 <suite name="Suite1" verbose="1" >
     <test name="Board" >
         <classes>
-            <class name="com.meir.trello.LoginTest" />
-            <class name="com.meir.trello.BoardCreationTest" />
-            <class name="com.meir.trello.BoardDeletionTest" />
+            <class name="com.meir.trello.tests.LoginTest" />
+            <class name="com.meir.trello.tests.BoardCreationTest" />
+            <class name="com.meir.trello.tests.BoardDeletionTest" />
 
         </classes>
     </test>
