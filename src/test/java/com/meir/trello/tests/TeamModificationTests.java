@@ -1,5 +1,6 @@
 package com.meir.trello.tests;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -18,8 +19,8 @@ public class TeamModificationTests extends TestBase {
         app.getTeam().clickOnEditTeamProfileButton();
         app.getTeam().changeTeamName();
         app.getBoard().returnToHomePage();
-//        clickOnTheTeam();
-//        clickOnTeamSettings();
+//        app.getTeam().clickOnTheTeam();
+//        app.getTeam().clickOnTeamSettings();
 //        String name = getText(By.cssSelector(".u-inline"));
 //        System.out.println(name);
 

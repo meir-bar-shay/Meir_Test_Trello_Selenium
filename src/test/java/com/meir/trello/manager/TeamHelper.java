@@ -15,6 +15,8 @@ public class TeamHelper extends HelperBase{
 
     public void fillTeamCreationForm(TeamData teamData) throws InterruptedException {
         type(By.cssSelector("[data-test-id='header-create-team-name-input']"), teamData.getTeamName());
+//        click(By.cssSelector("[data-test-id='header-create-team-type-input']"));
+//        click(By.xpath("//*[contains(text(), 'Sales')]"));
         type(By.cssSelector("[id$=description]"), teamData.getTeamDescr());
     }
 
@@ -25,12 +27,16 @@ public class TeamHelper extends HelperBase{
     public void closeInviteToTheTeamForm() throws InterruptedException {
         click(By.cssSelector("[name='close']"));
     }
+    public void teamTypeSelect() throws InterruptedException {
+        click(By.cssSelector("[id='teamTypeSelect']"));
+    }
 
     public void clickTeamLaterButton() throws InterruptedException {
         click(By.cssSelector("[data-test-id='show-later-button']"));
     }
 
-    public int getTeamsCount() {
+    public int getTeamsCount() throws InterruptedException {
+        pause(10000);
         return wd.findElements(By.cssSelector("[data-test-id^=home-team-tab-section]")).size();
     }
 

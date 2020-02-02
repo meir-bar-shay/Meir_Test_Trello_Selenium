@@ -5,7 +5,7 @@
         <classes>
             <class name="com.meir.trello.tests.TeamCreationTests" />
             <class name="com.meir.trello.tests.TeamModificationTests" />
-            <class name="com.meir.trello.tests.TeamDeletionTest" />
+            <class name="com.meir.trello.tests.TeamDeletionTests" />
 
         </classes>
     </test>
