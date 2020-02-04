@@ -22,7 +22,7 @@ task testAll(type: Test) {
         systemProperty 'browser', "${browser}"
     }
 }
-task testRegression(type: Test) {
+task testBoard(type: Test) {
     useTestNG {
         suites 'src/test/resources/testng.xml'
     }
