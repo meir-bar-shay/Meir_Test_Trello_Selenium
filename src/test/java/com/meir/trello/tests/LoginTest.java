@@ -12,7 +12,7 @@ public class LoginTest extends TestBase {
             app.getSession().logout();
         }
 
-        
+
     }
 
     @Test
