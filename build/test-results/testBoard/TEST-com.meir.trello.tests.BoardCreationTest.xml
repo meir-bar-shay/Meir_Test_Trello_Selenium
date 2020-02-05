@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.meir.trello.tests.BoardCreationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-04T17:26:38" hostname="Meir_Max" time="76.568">
+<testsuite name="com.meir.trello.tests.BoardCreationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-05T17:51:49" hostname="Meir_Max" time="92.641">
   <properties/>
-  <testcase name="CreateBoard" classname="com.meir.trello.tests.BoardCreationTest" time="76.568"/>
-  <system-out><![CDATA[actualRes = 11
-actualRes = 17
-expectedRes = 14
+  <testcase name="CreateBoard" classname="com.meir.trello.tests.BoardCreationTest" time="92.641"/>
+  <system-out><![CDATA[actualRes = -1
+actualRes = 8
+expectedRes = 2
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

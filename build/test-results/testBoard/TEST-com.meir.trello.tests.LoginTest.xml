@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.meir.trello.tests.LoginTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-02-04T17:25:04" hostname="Meir_Max" time="94.023">
-  <properties/>
-  <testcase name="testLogInWithAtlassianAcc" classname="com.meir.trello.tests.LoginTest" time="44.55"/>
-  <testcase name="testLogInWithAtlassianAcc1" classname="com.meir.trello.tests.LoginTest" time="43.435"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

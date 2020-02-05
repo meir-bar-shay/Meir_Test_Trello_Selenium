@@ -11,6 +11,8 @@ public class LoginTest extends TestBase {
         if(app.getSession().isAvatarPresentOnHeader()){
             app.getSession().logout();
         }
+
+        
     }
 
     @Test
