@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.meir.trello.tests.BoardDeletionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-02-04T17:27:55" hostname="Meir_Max" time="99.315">
+  <properties/>
+  <testcase name="deleteAllBoardsTest" classname="com.meir.trello.tests.BoardDeletionTest" time="84.187"/>
+  <testcase name="deleteSingleBoardTest" classname="com.meir.trello.tests.BoardDeletionTest" time="15.078"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -31,7 +31,7 @@ public class ApplicationManager {
             wd = new InternetExplorerDriver();
         }
 
-        wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
         wd.get("https://trello.com/");
 
         board = new BoardHelper(wd);
